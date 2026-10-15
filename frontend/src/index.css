@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Neutral canvas + navy ink */
+  --color-canvas: #f5f6f8;
+  --color-surface: #ffffff;
+  --color-line: #e3e6eb;
+  --color-line-strong: #cfd4dc;
+  --color-ink: #0f2a3d;
+  --color-ink-2: #3c5163;
+  --color-ink-3: #6b7c8c;
+  --color-ink-4: #98a5b1;
+
+  /* Single accent: deep teal */
+  --color-accent: #0f766e;
+  --color-accent-hover: #0b5f58;
+  --color-accent-soft: #e6f4f2;
+
+  /* Semantic status (used sparingly) */
+  --color-ok: #15803d;
+  --color-ok-soft: #e8f5ec;
+  --color-warn: #b45309;
+  --color-warn-soft: #fdf3e3;
+  --color-bad: #b42318;
+  --color-bad-soft: #fdecea;
+  --color-info: #1d4f91;
+  --color-info-soft: #e8eef8;
+}
+
+@layer base {
+  html { -webkit-font-smoothing: antialiased; }
+  body { @apply bg-canvas text-ink font-sans text-[13px] leading-5; }
+  h1, h2, h3 { @apply text-ink; }
+  input, select, textarea, button { font: inherit; }
+  :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 1px; }
+}
+
+.tabular { font-variant-numeric: tabular-nums; }
